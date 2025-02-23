@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Bot Xizmatlari - EkalDev</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        /* 🔹 Umumiy Stil */
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(to right, #121212, #1e1e1e);
+            color: white;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* 🔹 Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(20, 20, 20, 0.9);
+            box-shadow: 0px 5px 15px rgba(0, 255, 153, 0.3);
+            z-index: 1000;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #00ff99;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(0, 255, 153, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* 🔹 Asosiy Bo'lim */
+        section {
+            padding: 120px 20px 80px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00ff99, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 5px 15px rgba(0, 255, 153, 0.7);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        p {
+            font-size: 20px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        /* 🔹 Telegram Bot Xizmatlari */
+        .bot-info {
+            padding: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bot-info img {
+            width: 120px;
+            margin-bottom: 15px;
+        }
+
+        .bot-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bot-info ul li {
+            font-size: 18px;
+            padding: 10px 0;
+            opacity: 0.9;
+            transition: 0.3s;
+        }
+
+        .bot-info ul li:hover {
+            transform: scale(1.05);
+            color: #00ff99;
+        }
+
+        /* 🔹 Tugma */
+        .btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #00ff99, #00ccff);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 255, 153, 0.5);
+            animation: fadeInUp 1.4s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 255, 153, 0.8);
+        }
+
+        /* 🔹 Modal Oynasi */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .modal-content {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0px 5px 15px rgba(0, 255, 153, 0.3);
+            animation: scaleUp 0.3s ease-in-out;
+        }
+
+        .modal-content input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .modal-content .btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* 🔹 Footer */
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            background: rgba(20, 20, 20, 0.9);
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0px -5px 15px rgba(0, 255, 153, 0.3);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        /* 🔹 Animatsiyalar */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">EkalDev</div>
+    <nav>
+        <a href="index.html">Bosh sahifa</a>
+        <a href="xizmatlar.html">Xizmatlar</a>
+        <a href="aloqa.html">Aloqa</a>
+    </nav>
+</header>
+
+<section>
+    <h1>🤖 Telegram Bot Yaratish</h1>
+    <p>Avtomatlashtirilgan biznesingiz uchun AI botlar!</p>
+
+    <div class="bot-info">
+        <img src="https://cdn-icons-png.flaticon.com/512/2199/2199908.png" alt="Telegram Bot">
+        <h2>📌 Biz taklif qilamiz:</h2>
+        <ul>
+            <li>⚡ 24/7 ishlaydigan botlar</li>
+            <li>💬 Foydalanuvchilar bilan chatlashish</li>
+            <li>📊 Buyurtma va ma’lumotlarni yig‘ish</li>
+            <li>🛒 Savdo va to‘lov tizimlarini qo‘shish</li>
+        </ul>
+    </div>
+
+    <button class="btn">Xizmatga yozilish</button>
+</section>
+
+<footer>
+    &copy; 2025 EkalDev. Barcha huquqlar himoyalangan.
+</footer>
+
+</body>
+</html>

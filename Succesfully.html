@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+        body {
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            min-height: 100vh; background: #000; overflow: hidden;
+            position: relative; text-align: center;
+        }
+
+        /* Background Video */
+        .video-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100vw; height: 56.25vw;
+            min-height: 100vh; min-width: 177.78vh;
+            transform: translate(-50%, -50%);
+        }
+
+        .success-message {
+            background-color: rgba(54, 65, 94, 0.8);
+            color: white; padding: 20px;
+            border-radius: 10px; font-size: 1.5rem;
+            margin-top: 20px; backdrop-filter: blur(10px);
+        }
+
+        .button {
+            background-color: #09d2e4; color: white;
+            padding: 10px 20px; text-decoration: none;
+            border-radius: 5px; font-size: 1rem;
+            margin-top: 20px; display: inline-block;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #36b2d1;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Video Container -->
+<div class="video-container">
+    <iframe
+            src="https://www.youtube.com/embed/XaoigWHOtBM?autoplay=1&mute=1&loop=1&playlist=XaoigWHOtBM&controls=0&showinfo=0&modestbranding=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+    </iframe>
+</div>
+
+<h1 style="color: white;">Congratulations!</h1>
+<p style="color: white;">Your action was successful.</p>
+
+<div class="success-message">
+    Success! Username and password updated.
+</div>
+
+<a href="Sign-in.html" class="button">Go to Sign-in</a>
+
+</body>
+</html>
